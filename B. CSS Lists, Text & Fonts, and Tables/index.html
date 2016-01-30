@@ -1,0 +1,92 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+        <style>
+.nav { 
+    background-color: white; 
+    padding: 0.5em; 
+    border-top: 2px solid lightgrey; border-bottom: 2px solid lightgrey;
+    display:table;
+    width: 98.5%;
+}           
+.nav li { 
+    float: left; 
+    background-color: darkorange; 
+    padding: 0 1em;
+}
+.nav li:hover {
+    border: solid thin brown;
+    margin: 0.2em;
+}
+.nav a {
+    color: white;
+    text-decoration:none; 
+    font-size: 1.5em; 
+    font-weight: 900; 
+
+}</style>
+	</head>
+	<body>
+		<article>
+			<h1>CSS Lists, Text & Fonts, and Tables</h1>
+			
+			<section id="Lists">
+				<h2>Lists</h2>
+				<p>The <span class="attribute">list-style-type</span> can be defined in CSS. It takes values such as "upper-roman", "lower-alpha", "disc", "squares", etc.</p>
+                <p>The <span class="attribute">list-style-image</span> property can specify a custom image to use as the bullets in a <span class="tag">ul</span>tag.</p>
+                <p>The <span class="attribute">float</span> property is often applied to <span class="code">ul > li</span> HTML in crating a nav-bar. Here is an example navigation bar for some of the notes of the first few chapters in this course:</p>
+                <span class="note"><i>please use the back button to return to this page!</i></span>
+                <ul class="nav">
+                    <li class="navitem"><a title="Introduction and basics" href="../1.%20Introduction%20and%20basics/html%20project/my_index.html">Intro</a></li>
+                    <li class="navitem"><a title="HTML Documents" href="../2.%20HTML%20Documents/1%20heads%20and%20bodies.html">Documents</a></li>
+                    <li class="navitem"><a title="HTML Lists" href="../3.%20HTML%20Lists/all%20about%20lists.html">Lists</a></li>
+                    <li class="navitem"><a title="HTML Tables" href="../4.%20HTML%20Tables/1.%20table%20basics.html">Tables</a></li>
+                </ul>
+			</section>
+            <section id="Text & Fonts">
+                <h2>Text</h2>
+                <p>There are various text styling properties in CSS. Some of the commmon examples:</p>
+                <ul>
+                    <li><span class="attribute">text-align</span> - to horizontally center, justify right or left (default)</li>
+                    <li><span class="attribute">text-decoration</span> - specify "none" to remove an underline from a link.</li>
+                    <li><span class="attribute">text-indent</span> - specify a distance to indent the text within the element:
+                        <div id="textIndentExample" style="width: 20em;">
+                            <p style="text-indent: 5em">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                        </div>
+                    </li>
+                    <li><span class="attribute">text-shadow</span> - <span style="text-shadow: 2px 2px 2px purple">clearly, useful</span> for display purposes (graphic purposes), rather than bulk text.</li>
+                </ul>
+                                
+                <h2>Fonts</h2>
+                <p>Font properties look to apply changes to the font of the text.</p>
+                <ul>
+                    <li><span class="attribute">font-family</span> - a comma separated, quote-escaped list of fonts in order from most desired to least desired (fonts that do not have a letter to be rendered will be skipped until a proper font is found). Fonts must be available for use.</li>
+                    <li><span class="attribute">font-size</span> - to specify the font size of the rendered text</li>
+                    <li><span class="attribute">font-weight</span> - specify "bold" to make bold, or a number by 100 between 100 and 900 to specify increasing weights in a multi-weight font.</li>
+                    <li><span class="attribute">font-variant</span>- specify "small-caps" to get rendered smallcaps or in some cases small caps from the font</li>
+                </ul>
+            </section>
+            <section id="Tables">
+                <h2>Tables</h2>
+                <p>Tables are styled with common properties like <span class="attribute">border</span>, <span class="attribute">width</span>, or <span class="attribute">padding</span>. The <span class="attribute">border-spacing</span> property, set to "collapse", will remove spacing around table elements. Here are some more important CSS properties for tables:</p>
+                <ul>
+                    <li><span class="attribute">vertical-align</span> - align the content verticallyin the element.</li>
+                    <li><span class="attribute">white-space</span> - controls how text wraps in an element.</li>
+                    <li><span class="attribute">table-layout</span> - The width of the table and its cells depends on the content inside. If you change this to <span class="code">fixed</span>, the table and column widths are set by the widths of table and col elements or by the width of the first row of cells. Cells in subsequent rows do not affect column widths, which can speed up rendering. If content in subsequent cells can't fit, the overflow property determines what happens.</li>
+                </ul>
+                <p>CSS has properties to make any element you wish behave as if it was a table element. You'll need to structure them essentially as you would a table, and it will be subject to the same source-order-dependency as a table, but you can do it. I'm not crapping on it either, it's genuinely useful sometimes. If that layout style solves a problem and has no negative order implications, use it.</p>
+                <ul>
+                    <li><span class="code">display: table</span> - make the element act as a <span class="tag">table</span> element</li>
+                    <li><span class="code">display: table-cell</span> - make the element act as a <span class="tag">td</span> element</li>
+                    <li><span class="code">display: table-row</span> - make the element act as a <span class="tag">tr</span> element</li>
+                    <li><span class="code">display: table-column</span> - make the element act as a <span class="tag">col</span> element</li>
+                    <li><span class="code">display: table-column-group</span> - make the element act as a <span class="tag">colgroup</span> element</li>
+                    <li><span class="code">display: table-header-group</span> - make the element act as a <span class="tag">thead</span> element</li>
+                    <li><span class="code">display: table-footer-group</span> - make the element act as a <span class="tag">tfoot</span> element</li>
+                </ul>
+            </section>
+		</article>
+	</body>
+</html>

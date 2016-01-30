@@ -1,0 +1,62 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1 style="float:right; margin-right: 2em;">The Nest Structure of Selectors</h1>
+            <section id="intro" style="clear:both">
+                <p>HTML documents are structured like a tree, with elements nested inside of others. Your selectors can follow the same structure, and there ar special operators used to describe different ways of traversing the DOM tree.</p>
+            </section>
+            
+            <h1><a href="index.html">previous section</a></h1>
+			
+            <section id="Descendents">
+                <h2>Descendents</h2>
+
+                <h3>&gt; immediate descendent</h3>
+                <p>The &gt; symbol is the operator to denote that an element is the direct descendent of another element:</p>
+                <pre class="highlighted"><code>p &gt; a { // all anchors within paragraphs ...</code></pre>
+                <div class="inset">
+                    <h4>Matches</h4>
+                    <pre class="highlighted"><code>&lt;p&gt;this is a &lt;a href=&quot;url&quot;&gt;link&lt;/a&gt;&lt;/p&gt;</code></pre>
+                    <h4>Rejects</h4>
+                    <pre class="highlighted"><code>&lt;p&gt;&lt;/p&gt;
+&lt;a href=&quot;foo&quot;&gt;bar&lt;/a&gt;&lt;!-- not in a p tag --&gt;
+
+&lt;p&gt;This is a paragraph with a &lt;i&gt;specially emphasized&lt;/i&gt; &lt;b&gt;&lt;a href=&quot;URL&quot;&gt;link.&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;!-- not the direct descendent, because of the bold tag --&gt;</code></pre>
+                </div>
+
+                <h3><span style="font-family:mono">SPACE</span> indirect descendent</h3>
+                <p>To match indirect descendents, for example, all anchors within a paragraph (even those nested deeper), use the indirect descendent markup. This is just a space between the two, such as</p>
+                <pre class="highlighted"><code>p a { // all achors anywhere within paragraphs ...</code></pre>
+                <div class="inset">
+                    <h4>Matches</h4>
+                    <pre class="highlighted"><code>&lt;p&gt;this is a &lt;a href=&quot;url&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+                        
+&lt;p&gt;This is a paragraph with a &lt;i&gt;specially emphasized&lt;/i&gt; &lt;b&gt;&lt;a href=&quot;URL&quot;&gt;link.&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;!-- not the direct descendent, because of the bold tag, but still matches --&gt;</code></pre>
+                    <h4>Rejects</h4>
+                    <pre class="highlighted"><code>&lt;p&gt;&lt;/p&gt;
+&lt;a href=&quot;foo&quot;&gt;bar&lt;/a&gt;&lt;!-- not in a p tag --&gt;</code></pre>
+                </div>
+            </section>
+            <section id="Siblings">
+                <h2>Siblings</h2>
+                
+                <h3>+ sibling</h3>
+                <p>The consequent in a pair of elements can be specified with the sibling operator.</p>
+                <pre class="highlighted"><code>h2 + p { // all p elements which are the first element after an h2 element }</code></pre>
+                <p>There is no "previous" sibling selector (until CSS4 which will allow <span class="code">!antecendent + consequent { }</span> matches), as one would hope to get the first element in a sibling pair</p>
+                
+                <h3>~ adjacent sibling</h3>
+                <p>The "neighbor" or adjacent sibling operator matches the consequent in a group of elements begining with the antecedent, making it rather like an "indirect sibling". The second element doesn't have to immediately follow, but must be at the same depth in the DOM tree.</p>
+                <pre class="highlighted"><code>p ~ img { // an image, probably inline with paragraphs in an article or section}</code></pre>
+            </section>
+
+		</article>
+	</body>
+</html>

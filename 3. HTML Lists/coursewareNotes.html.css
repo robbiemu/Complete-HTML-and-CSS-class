@@ -1,0 +1,10 @@
+.tag::before {
+	content: "<";
+}
+.tag::after {
+	content: ">";
+}
+.tag, .code, .attribute {
+	background-color: #f8f8f8;
+	font-family: Calibri, mono;
+}

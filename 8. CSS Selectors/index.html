@@ -1,0 +1,55 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+        <style>
+.conditionallyHighlighted:hover {
+    background-color: #fee;
+}
+        </style>
+	</head>
+	<body>
+		<article>
+			<h1>CSS Selectors</h1>
+			
+			<section id="Basics">
+				<h2>Basic means of selection</h2>
+				<p>CSS Style rules are applied to lements that match seleciton rules. These can be literal matches:</p>
+                <pre class="highlighted">p { // all paragraph elements everywhere on the page
+    text-size: 1.2em;
+}</pre>
+                <p>And multiple seleciton criteria can be supplied to a single style declaration:</p>
+                <pre class="highlighted">p, span { font-family: mono; }</pre>
+                
+                <p>Common attributes used for selection are <span class="attribute">id</span> and <span class="attribute">class</span> attributes:</p>
+                <h4>id</h4>
+                <pre class="highlighted">#namedElement { ... }</pre>
+                
+                <h4>class</h4>
+                <pre class="highlighted">.itemsToCenter { // any element with this class.
+ ...
+}
+p.center, img.center { // but not, for example, table.center
+ ...
+}</pre>
+			</section>
+            <section id="States">
+                <h2>Element States</h2>
+                <p>Elements have at least the <span class="state">hover</span> state, which apply to them only when the condition is met. In the case of <span class="state">hover</span>, it is true of the element only while the cursor of the user is above the element. Styling an element which is in a state is specified in the selector like so:</p>
+                <pre class="highlighted conditionallyHighlighted">p:hover { ... }</pre>
+                <span class="note">hover over the above code to see it in action.</span>
+                <p>This brings up the point that CSS declarations are applied in deference to their specificity. For example, give rules for <span class="code">a {}, a.ofClass{}, a#item, a:hover {}</span>, all will apply, and in this case they will be applied from left to right so that the most specific one will apply last.</p>
+                <p>One of the tags who's states are commonly styled with CSS is the <span class="tag">a</span> anchor tag, which takes the following states:</p>
+                <ul>
+                    <li>a:link - a normal, unvisited link</li>
+                    <li>a:visited - a link the user has visited</li>
+                    <li>a:hover - a link when the user mouses over it</li>
+                    <li>a:active - a link the moment it is clicked</li>
+                </ul>
+            </section>
+            
+            <h1><a href="nestedStructure.html">next section</a></h1>
+		</article>
+	</body>
+</html>

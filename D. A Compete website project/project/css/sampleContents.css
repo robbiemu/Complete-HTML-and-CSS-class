@@ -1,0 +1,36 @@
+.adPlaceHolder {
+    background-color: grey;
+    height: 3rem;
+    width: calc(100% - 0.5em);
+/* content */
+    color: #ddd;
+    font-family: "Roboto Black", sans;
+    font-weight: 900;
+    font-size: 2rem;
+    font-variant: small-caps;
+    font-style: oblique;
+    letter-spacing: 3px;
+    padding-left: 1em;
+}
+.adPlaceHolder::before {
+    content: "Ad PlaceHolder";
+}
+#shelf .adPlaceHolder {
+    margin: 0.5em;
+    width: calc(100% - 4rem);
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.inset {
+    height: 9em;
+}
+
+.siteFactoid {
+    border: solid thin #eee;
+    margin: 1em;
+    padding: 2em;
+    width: calc(100% - 6em);
+}

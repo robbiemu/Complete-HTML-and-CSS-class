@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<style type="text/css">
+body, span, p, h1, h2, h3, h4, h5, h6 {
+	font-family: "Graublau Web", sans-serif;
+}
+article {
+	background-color: rgb(250,250,250);
+	margin: 3em;
+	padding: 2em;
+}
+article > h2 {
+	background-color: white;
+}
+#pageHeader {
+	font-family: "Roboto Black", Arial, sans-serif;
+}
+
+.attribute, .tag {
+	font-family: Calabri, mono;
+	background-color: white;
+	padding-left: 0.5em; padding-right: 0.5em;
+}
+.tag::before {
+	content: "<";
+}
+.tag::after {
+	content: ">";
+}
+
+#firstArticle > p {
+}
+#secondArticle > p {
+}
+p.typetwo {
+}
+
+		</style>
+	</head>
+
+	<body>
+		<h1 id="pageHeader">Page Heading</h1>
+		
+		<article id="firstArticle">
+			<h2>Article Heading</h2>
+			
+			<p class="type_one">This is an article.<br/>This is a paragraph broken by a <span class="tag">br</span> tag</p>
+			<p>Most of the older HTML attributes are depreciated now, though many like <span class="attribute" title="shows text when hovered">title</span> still work. </p>
+			<p class="type_two" title="this is the last paragraph in the article">Thanks.</p>
+		</article>
+		
+		<article id="secondArticle">
+			<h2>Article Heading</h2>
+
+			<p class="type_two"></p>
+		</article>
+		
+	</body>
+	
+</html>

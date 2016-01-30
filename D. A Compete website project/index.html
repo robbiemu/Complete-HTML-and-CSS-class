@@ -1,0 +1,172 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+        <style>
+#pageExample {
+    width: 50vw;
+    background-color: #fefefe;
+}
+#pageExample #header {
+    width: calc(50vw - 1em);
+    background-color: green;
+    font-size: 1.5em;
+    padding-left: 1em;
+    height: 3.6rem;
+}
+#pageExample h1 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-variant: small-caps;
+    padding-bottom: 10px;
+}
+#pageExample #nav {
+    width: 50vw;
+    color: grey;
+    height: 1.2em;
+    padding-bottom: 2px;
+    border-top: solid thin #eee;
+    border-bottom: solid thin #eee;
+}
+#pageExample #nav ul {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+}
+#pageExample #nav li {
+    float:left;
+    margin: 0 2em;
+}
+#pageExample #nav li:last-child {
+    float:right;
+}
+#pageExample #contents {
+    width: 50vw;
+    height: auto;
+    clear: both;
+/* support same-height child elements */
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap; /* Safari */
+    flex-wrap: nowrap;
+    -webkit-align-items: stretch; /* Safari */
+    align-items: stretch;
+}
+#pageExample #contents > #left {
+    height: 24em; /* temporarily faking content  */
+    border-right: solid thin #eee;
+    // support same height columns
+    -webkit-order: 0; /* Safari */
+    order: 0;
+    -webkit-flex-grow: 7; /* Safari */
+    flex-grow: 7;
+}
+#pageExample #contents > #right {
+    // support same height columns
+    -webkit-order: 1; /* Safari */
+    order: 1;
+    -webkit-flex-grow: 3; /* Safari */
+    flex-grow: 3;
+
+}
+#pageExample #footer {
+    width: 50vw;
+    font-size: 0.5em;  
+}
+        </style>
+	</head>
+	<body>
+		<article>
+			<h1>Complete Website Project</h1>
+			
+            <section>
+                <h2>Projects on the filesystem</h2>
+                <p>A good idea is to separate the content, css, and javascript into different folders. This creates a filesystem heirarchy like:</p>
+                <ul>
+                    <li>/ - contains index.html, project files, git stub, etc</li>
+                    <li>/bin - folder for additional tools used in maintaining the site, like automatic documenation generators, etc</li>
+                    <li>/doc - folder for site, code, etc documentation</li>
+                    <li>/conf - folder for configuration files</li>
+                    <li>/css - folder for CSS throughout the site</li>
+                    <li>/js - folder for site javascript</li>
+                    <li>/js/unitTests - folder for javascript unitTests (to ensure that all parts of the site are working)</li>
+                    <li>/assets - folder for media</li>
+                    <li>/assets/images - for example, one specifically for image files.</li>
+                </ul>
+                <p>If you are utilizing a specific web framework, this will be specified for you. And you likely will not often need all of those folders, but creating an empty site like this and then copying it for each new project is a great way to create a standard work environment to start from.</p>
+            </section>
+            
+			<section id="LayoutOfWebpage">
+				<h2>Laying out a page</h2>
+				<p>A good pattern to follow is to encapsulate every area on import in your page. Like in the following:</p>
+                <pre class="highlighted"><code>
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;outerContainer&quot;&gt;&lt;!-- renderable part of the body --&gt;
+      &lt;div id=&quot;header&quot;&gt;&lt;!-- top section --&gt;&lt;/div&gt;
+      &lt;div id=&quot;nav&quot;&gt;&lt;!-- main navigation element --&gt;&lt;/div&gt;
+      &lt;div id=&quot;contents&quot;&gt;&lt;!-- main body of current page --&gt;&lt;/div&gt;
+      &lt;div id=&quot;footer&quot;&gt;&lt;!-- legalese and contact info, etc --&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                <p>This encapsulation makes each logical unit easily addressable by CSS or javascript.</p>
+                <p>In general, web pages have a top bar, a nav element, and a content pane. Many also include a footer, while others simply link to those details from the site navigation.</p>
+                <p>In order to ensure side panels (like a side nav) have a specific width, or that top bars have a specific height, use CSS. It is important to specify width for all the container divs that divide up th page:</p>
+                <pre class="highlighted"><code>
+div#outerContainer {
+//    padding: 0 1px;
+}
+div#header {
+    height: 1.4em;
+}
+div#nav, div#contents {
+    float: left;
+}
+div#nav {
+    width: 20em;
+}
+div#contents {
+    width: 100%;
+}
+div#footer {
+    clear: both;
+}
+div#outerContainer, div#header, div#footer {
+    width: 100vw;
+}
+                </code></pre>
+
+                <p>Such a page might look like this:</p>
+                <div id="pageExample">
+                    <div id="outerContainer">
+                        <div id="header">
+                            <h1>Branding and page info</h1>
+                        </div>
+                        <div id="nav">
+                            <ul>
+                                <li>Home</li>
+                                <li>Details</li>
+                                <li>Contact</li>
+                                <li>Share</li>
+                            </ul>
+                        </div>
+                        <div id="contents">
+                            <div id="left">
+                            </div>
+                            <div id="right">
+                            </div>
+                        </div>
+                        <div id="footer">copyright 2016 Example Solutions</div>
+                    </div>
+                </div> 
+                <p>Moving on to the final part of the class, this framework above will be the basis of the project.<br /><a href="project/index.html">project page<a></p>
+			</section>
+		</article>
+	</body>
+</html>

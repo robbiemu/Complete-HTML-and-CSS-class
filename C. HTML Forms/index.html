@@ -1,0 +1,133 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+        <style>
+#exampleFormContainer {
+    margin-left: 2em;
+    padding: 2em;
+    display: inline-block;
+}            
+.form.title { 
+    margin: 1em auto 2em auto;
+    line-height: 75%; 
+}
+.form.title h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+input[type=submit] {
+    margin: 2em auto 0em auto;
+    font-size: 1.3em;
+    display: block;
+}
+form li {
+    list-style-type: none;
+    margin-left: -3em;
+}
+#hint {
+    display:none;
+}
+input[type="button"], #checkboxContainer {
+    clear: both;
+    position: relative;
+    display: block;
+}
+#buttonContainer, #radioContainer {
+    float: left;
+    border: dotted lightgrey thin;
+    padding: 0 1em;
+    margin-bottom: 1em;
+}
+#radioContainer{
+    padding-top: 1em;
+    height: 6em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+#buttonContainer {
+    padding-top: 2em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-left: none;
+    clear:bottom;
+    width: 10em; 
+    height: 5em;
+}
+        </style>
+        <script>
+function toggleHint() {
+    var hint = document.getElementById('hint');
+    var displaySetting = hint.style.display;
+    
+
+    if ((displaySetting == "none") || (displaySetting == "")) {
+        hint.style.display = 'inline';
+    } else {
+        hint.style.display = 'none';
+    }    
+}
+        </script>
+	</head>
+	<body>
+		<article>
+			<h1>HTML Forms</h1>
+			
+			<section id="Forms">
+				<h2>Form basics</h2>
+				<p>The <span class="tag">form</span> tag creates a form that will post data back to the server, injecting it the last part of the URL. Like tables, the outer tag itself does not render: its contents does.</p>
+                <p>Form validation requires javascript. Submitting a form will will by default use the URL of the current page. A different base URL can be specified in the <span class="tag">form</span> tag with the <span class="attribute">action</span> attribute.</p>
+                
+                <h2>Input tag</h2>
+                <p>The <span class="tag" class="single">input</span> tag is used to creat a field for the user to enter data. Its <span class="attribute">type</span> attribute can be "text" or something else; for example, "password" will take text input and show dots instead of characters.</p>
+                <p>The value of "file" will allow the user to select a file using their local filesystem, which will only be submitted manually (with javascript) along with the rest of the form data. Other important values are "radio" (for a "radio" binary option), and "checkbox". These are related together by specifying the same <span class="attribute">name</span>. Radio buttons are meant to be required, and cannot be unchecked (without using javascript). Two more are "button" (for a button to attach to javascript, etc), and "submit" (a special button to submit the form).</p>
+                <p>The "file" and "password" options will be in the url in plain text (and therefore deeply insecure for passwords) unless you set the <span class="attribute">method</span> to "post". To support encryption, you have to set annother attribute, like so: <span class="code">enctype="multipart/form-data"</span>. Getting HTTPS set up on your webserver is also important, if it is handling secure data. But that is beyond the scope of this tutorial.</p>
+                <p>In every case, the <span class="attribute">name</span> of an input specifies the name used to submit the data captured by the input once the form is sumbitted. The <span class="attribute">value</span> attribute specifies the value submitted (if it is not a text field input, etc).</p>
+                
+                <p>By default, buttons are styled according to the browser, which usually uses the operating system's design language. However, they can be styled like any other element with CSS.</p>
+                
+                <h2>Textarea</h2>
+                <p>If you want a large text area for input, you can specify one with the <span class="tag">textarea</span> tag.</p>
+                
+                <h2>Select and Option tags</h2>
+                <p>Another major tag is the <span class="tag">select</span> tag. It encapsulates a group of <span class="tag">option</span> tags that together define a dropdown box with its options.</p>
+                <p>The <span class="tag">select</span> tag takes the <span class="attribute">name</span> attribute, while the <span class="tag">option</span> tags take the <span class="attribute">value</span> attributes, one of which will be selected by the user and submited in the form submission. The default <span class="tag">option</span> can be set with an attribute like so: <span class="code">selected="selected"</span></p>
+
+                <h2>Example Form</h2>                
+                <div id="exampleFormContainer" class="highlighted">
+                    <form id="exampleForm" >
+                        <div class="form title"><h1>Form title</h1></div>
+                        <div class="form body">
+                            <p>Enter text here: <input type="text" name="text" value="default text" /></p>
+                            <p>Choose a password: <input type="password" name="password" /></p>
+                            <div id="radioContainer" class="form optionGroup">
+                                <span>Did you watch this movie?:</span>
+                                <ul>
+                                    <li><input type="radio" name="pill" value="red" /> red pill</li>
+                                    <li><input type="radio" name="pill" value="green" /> green pill</li>
+                                </ul>
+                            </div>
+                            <div id="buttonContainer">
+                                <input type="button" value="give me a hint!" onclick="toggleHint()" title="press again to dismiss" />
+                                <h2 id="hint">The Matrix</h2>
+                            </div>
+                            <div id="checkboxContainer" class="form optionGroup">
+                                <ul>
+                                    <li><input type="checkbox" name="seenMovie" /> I have seen that movie.</li>
+                                </ul>
+                            </div>
+                            <h4>please select an option:</h4>
+                            <select name="select">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                            </select>
+                            <input type="submit" value="submit" title="process the form" />
+                        </div>
+                        <div class="form bottom"></div>
+                    </form>
+                </div>
+			</section>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1>CSS Dimensions</h1>
+			
+			<section id="HeightWidth">
+				<h2>Height and Width</h2>
+				<p>The CSS proprties <span class="attribute">height</span> and <span class="attribute">width</span> can be used to specify a height and width of a rendered element. The values are pixels by defualt, but can also be:</p>
+                <ul>
+                    <li>em, ex, ch, pt, pc, rem - standard typography measures except em — which is font-size instead of em-width (x-height, 0-width, point which is 4/3 of a pixel, and pica which is 16 pixels) and "rem", the font-size of the root document element</li>
+                    <li>in, cm, mm, px - based on the reference pixel of the device - printers used to be more accurate in these measures. The px is not a raw pixel value, but adjusted by the device-pixel-ratio (and the browser zoom)</li>
+                    <li>%, vw, vh, vmin, vmax - respectively: relative size of the parent element, the width of the viewport, its height, the smaller of the two, the larger of the two</li>
+                </ul>
+			</section>
+
+            <section id="MarginPadding">
+                <h2>Margins and Padding</h2>
+                <p>The <span class="attribute">margin</span> defines the distance reserved <i>around</i> an element. The <span class="attribute">padding</span> defines the distance reserved <i>within</i> an element between it and it's content. </p>
+                <img class="center" src="tutorialimage2.gif" />
+                <p>The padding is added to the interior space of the element. So an element with <span class="code">width:200px and padding: 10px</span> will be 210px wide. Likewise the margin around an element is added to the interior space of the parent element.</p>
+                <p>All 4 sides can be specified, either together or on separate propert declarations. If the margin property has four values:</p>
+                <h4>margin: 25px 50px 75px 100px;</h4>
+                <ul>
+                    <li>top margin is 25px</li>
+                    <li>right margin is 50px</li>
+                    <li>bottom margin is 75px</li>
+                    <li>left margin is 100px</li>
+                </ul>
+                <p>If the margin property has three values:</p>
+                <h4>margin: 25px 50px 75px;</h4>
+                <ul>
+                    <li>top margin is 25px</li>
+                    <li>right and left margins are 50px</li>
+                    <li>bottom margin is 75px</li>
+                </ul>
+                <p>If the margin property has two values:</p>
+                <h4>margin: 25px 50px;</h4>
+                <ul>
+                    <li>top and bottom margins are 25px</li>
+                    <li>right and left margins are 50px</li>
+                </ul>
+                <p>If the margin property has one value:</p>
+                <h4>margin: 25px;</h4>
+                <ul>
+                    <li>all four margins are 25px</li>
+                </ul>
+                <p>These same formats apply for padding.</p>
+                <p>Both properties also can specifically specify their orientation:</p>
+                <pre class="highlighted"><code>margin-left: 2vw; // margin, or padding, either could be specified
+padding-right: 1em; // and so on, for all 4
+margin-top: 1vh;
+padding-bottom: 2em;</code></pre>
+            </section>
+		</article>
+	</body>
+</html>

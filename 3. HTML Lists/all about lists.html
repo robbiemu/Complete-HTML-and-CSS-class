@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<link  href="coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1>Lists</h1>
+			<p>List items are added, regardless of list type, with the <span class="tag">li</span> tag.</p>
+			<section id="orderedList">
+				<h2>Ordered List</h2>
+				<ol>
+					<li>A first list item</li>
+					<li>Another list item</li>					
+				</ol>
+				<p><span title="&lt;ol&gt;">Ordered lists</span> support attributes. The <span class="attribute">type</span> attribute describes the numbering:</p>
+				<ul>
+					<li><span class="code">type="1"</span> is a numbered list, and is the default.</li>
+					<li><span class="code">type="3"</span> would stat the list at 3, instead of 1.</li>
+					<li><span class="code">type="a"</span> is an "a,b,c" list.</li>
+					<li><span class="code">type="i"</span> is a lower case roman numeral list "i,ii,iii" list.</li>
+					<li>etc</li>
+				</ul>
+				<p>The <span class="tag">li</span> tag takes the <span class="attribute">value</span> attribute, which can be used to set the numbering in an ordered list starting at that item with that value. So <span class="code">value="c"</span> in the second item in an alphabetical ordered list would produce a list whose numbering would go: "a, c, d" etc.</p>
+				<p><i><b>note</b>: only ordered lists support the type attribute.</i></p>
+			</section>
+			<section id="unorderedList">
+				<h2>Unordered List</h2>
+				<ul>
+					<li>A first list item</li>
+					<li>Did you know you can nests lists within lists? These can mix types (ordered/unordered), or not.</li>	
+<!-- example here of a nested list -->
+						<ol class="highlighted" type="i" title="this is an ordered list inside a ul tag">
+							<li>nested list item</li>
+							<li>nested list item</li>
+						</ol>
+					<li>last list item, with an unordered list in the <span class="tag">li</span> tag:
+						<ul  class="highlighted" title="this is an unordered list inside an li tag">
+							<li>nested list item</li>
+							<li>nested list item</li>
+							<li>comparing these two nested list, you can see it does not matter to the basic render if it is in the li or the list itself</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section id="descriptionList">
+				<h2>Description List</h2>
+				<dl class="highlighted" title="this is a &lt;dl&gt; description list" >
+					<dt>The <span class="tag">dt</span> tag provides the lvalue in the description list.</dt>
+					<dd>The <span class="tag">dd</span> tag provides the rval in the description list.</dd>
+					<dt>if you stack them together many times in a <span class="tag">dl</span> tag, what happens?</dt>
+					<dd><b style="font-variant: small-caps">Answer</b>: you get a list like this.</dd>
+				</dl>
+			</section>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1>URLs, Links, and Iframe</h1>
+			
+			<section id="URLs">
+				<h2>URLs</h2>
+				<p>A URL is a <i>uniform resource locator</i> and most people are familiar with it and the HTTP protocol for web pages such as http://google.com Here is a diagram that deconstructs a URL:</p>
+				<img class="center" src="url-accessor-diagram.gif" />
+				<p>All travesal of the web (whether using text links, image links, forms, etc) use URLs to locate resources for the browser to render next.</p>
+			</section>
+				
+			<section id="Links">
+				<h2>Links</h2>
+				<p>The <span class="tag">a</span> anchor tag converts text to a link. For example, this link to <a href="http://www.google.com">google</a>. It takes the required <span class="atribute">href</span> attribute, which is the URL to link to.</p>
+				<p>Instead of adding URL with protocol at the start (like "http"), you can use file paths to point to local content. An example of that same localization with a different tag is in the <span class="tag">link</span> tag in the header here, which loads stylesheets to format the page.</p>
+				<p>The <span class="attribute">target</span> attribute of a anchor tag determines where the browser opens the link. This accepts several values. </p>
+				<ul>
+					<li>_blank - opens the link in a new window</li>
+					<li>_self - opens the link in the current frame (the same as default behavior)</li>
+					<li>_parent - opens the link in the parent frameset (as with iframes)</li>
+					<li>_top - opens the link in the full body of the window</li>
+					<li><i>framename</i> - opens the linked document in a named frame (as with iframes)</li>
+				</ul>
+			</section>
+			
+			<section id="Navigation">
+				<h2>Navigation</h2>
+				<p>Web pages are often divided up into different pages with a navigational element that links between them all, placed in common on each page. See this <a href="navigationLinks.html">example</a>.</p>
+				<p>However, this is usually done once in a single navigation object in code, and then injected into and reused in each page.</p>
+			</section>
+			
+			<section id="AnchorBookmarks">
+				<h2>Anchor Bookmarks</h2>
+				<p>Anchors bookmarks can link to a specific point in the current page, causing the browser to scroll as necessary when clicked. See the source code in <a href="#final">this link</a> for an example.</p>
+			</section>
+			
+			<section id="Iframes">
+				<h2>Iframes</h2>
+				<p>The <span class="tag">iframe</span> tag is an element which imports html from other pages. If it points to a full page, that is with an <span class="tag">html</span> tag, it acts as a virtual tab in your browser. It loads a URL from it's <span class="attribute">src</span> attribute. It is rendered in the current page, and can be layed out like any other block element. These are somewhat cludgy, and should be avoided in most cases, but they do have their uses. Despite the fact that it loads its content from another site, and so it doesn't need any sub-elements, it cannot be specified as a <span class="tag single">single</span> tag, as it will consume all other content from that point on in the page.</p>
+				<p>Here is a sample</p>
+				<iframe id="exampleIframe" style="width: 20em; height: 15em;" src="navigationLinks.html"></iframe>
+				<p>The <span class="attribute">frameborder</span> attribute can be used to hide the border, by setting it to 0.</p>
+				<p>Links in the iframe content will have the root path of the iframe content, not the parent page. The <span class="attribute">_target</span> attribute of an anchor can be set to _parent to cause the inner links to refresh the page's url, isntead of the <span class="tag">iframe</span> URL.</p>
+				<p>This tag can be used to inject navigation elements into all pages in a site (reusing the same navigation at each page), but again this is not a preferred solution.</p>
+			</section>
+
+			<section id="final" style="margin-top:1000em">
+			<h2>Anchor destination</h2>
+			<p><a href="#AnchorBookmarks">back</a></p>
+			</section>
+		</article>
+	</body>
+</html>

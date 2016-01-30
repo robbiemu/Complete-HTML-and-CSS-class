@@ -1,0 +1,130 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link href="../css/coursewareNotes.css" rel="stylesheet" />
+		<link href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<style>
+td { border: thin solid green; margin: 0.5em;}
+		</style>
+	</head>
+
+	<body>
+		<article>
+			<h1>Table basics</h1>
+			<section id="table_tr_td">
+				<h2>The fundamental tags</h2>
+				<P>Each table is defined by a <span class="Tag">table</span> tag. Each cell is defined by a <span class="tag">td</span> tag, which must sit within a table row <span class="tag">tr</span>, along with other cles in that row of the table</p>
+				<table class="highlighted">
+					<tr>
+						<td >first row, first cel</td>
+						<td>first row, second cel</td>
+					</tr>
+					<tr>
+						<td>second row, first cel</td>
+						<td>second row, second cel</td>
+						<td>tables can have variant row or cel definitions, like this third cell in the second row which has no matching pair in the first row</td>
+					</tr>
+				</table>
+				<p>Tables can be nested:</p>
+				<table class="highlighted">
+					<tr>
+						<td>first row, first cel</td>
+						<td><table>
+						<tr><th>nested table</th></tr>
+								<tr><td>1</td></tr>
+								<tr><td>2</td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>			
+			</section>
+			<section id="tableSubelements">
+				<h2>More table sub elements</h2>
+				<p>The first table row can have a table header <span class="tag">th</span> tag instead of a <span class="tag">td</span>, which should title the table row.</p>
+				<table class="highlighted">
+					<tr>
+						<th>First column</th>
+						<th>Second</th>
+						<th>and third</th>
+						</tr>
+					<tr>
+						<td >first row, first cel</td>
+						<td>first row, second cel</td>
+					</tr>
+				</table>
+			</section>
+			<section id="mainAttributes">
+				<h2>colspan and rowspan</h2>
+				<p><span class="tag">th</span> and <span class="tag">td</span> can also have the <span class="attribute">colspan</span> attribute, allowing them to span multiple columns in the table row <span class="tag">tr</span></p>
+				<table class="highlighted">
+					<tr>
+						<th>First column</th>
+						<th>Second</th>
+						<th>and third</th>
+						</tr>
+					<tr>
+						<td >first row, first cel</td>
+						<td colspan="2">this cel has colspan="2" defined</td>
+					</tr>
+					<tr>
+						<td rowspan="2">record with rowspan="2"</td>
+						<td>some data</td>
+						<td>and more data</td>
+					</tr>
+					<tr>
+						<!-- the first td here would not be helpful -->
+						<td>more data in a 3<sup>rd</sup> row</td>
+						<td>etc</td>
+					</tr>
+				</table>	
+
+				<h3>cel spacing and padding</h3>
+				<p>Table headers and divisions (the <span class="tag">td</span>) have <span class="attribute">width</span> and <span class="attribute">height</span> attributes</p>
+				<table class="highlighted" cellspacing="20" style="display:inline-block;">
+				<tr><th colspan="3" style="font-variant: small-caps; font-size: 2em;">cellspacing example</th></tr>
+					<tr>
+						<th>First column</th>
+						<th>Second</th>
+						<th>and third</th>
+						</tr>
+					<tr>
+						<td>first row, first cel</td>
+						<td>first row, second cel</td>
+					</tr>
+				</table>
+				<table class="highlighted" cellpadding="20" style="display:inline-block"">
+				<tr><th colspan="2" style="font-variant: small-caps; font-size: 2em;">cellpadding example</th></tr>
+					<tr>
+						<td>first row, first cel</td>
+						<td>first row, second cel</td>
+					</tr>
+					<tr><td colspan="2" style="font-style: italic;">unlike cellspacing, this is completely redunant because of CSS.</td></tr>
+				</table>				
+				<p>Unlike CSS these are automatically considered pixel values, even if you specify a different unit like ems (see table source for an example).</p>
+				<p>There are meta-data tags that are specific to tables. The first row can be wrapped in a <span class="tag">thead</span> tag to signify the header row. f used, the <span class="tag">tbody</span> tag must wrap the other rows. You can also add a <span class="tag">tfoot</span> tag to build a bottom "header" row.</p>
+			</section>
+			<section id="addendum">
+				<h2>Depreciated attributes</h2>
+				These are attributes whos purpose is completely fulfilled with CSS, and it is hard to imagine using them in the real world.
+				
+				<h3>Width and height attributes</h3>
+				<p>Table headers and divisions (the <span class="tag">td</span>) have <span class="attribute">width</span> and <span class="attribute">height</span> attributes</p>
+				<table>
+					<tr>
+						<th width="20em">First column</th>
+						<th width="20em">Second</th>
+						<th width="20em">and third</th>
+						</tr>
+					<tr>
+						<td height="45px">first row, first cel</td>
+						<td height="45px">first row, second cel</td>
+					</tr>
+				</table>
+				<p>Unlike CSS, these are automatically considered pixel values, even if you specify a unit besides pixels or the percent of the parent element.</p>
+				
+				<h3>Creating a whole site layout using tables</h3>
+				<p>using basic tables like this for web layout is not good practice, but it can be done, using cellspacing and cellpadding to divide the space automatically. Modern forms of the same thing are called, for example, fluid layout</p>
+			</section>
+		</article>
+	</body>
+</html>

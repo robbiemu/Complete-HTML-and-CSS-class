@@ -1,0 +1,49 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1>Intro to CSS, CSS Basics</h1>
+			
+			<section id="CSSIntro">
+				<h2>Intro to CSS</h2>
+				<p>CSS Stands for Cascading Style Sheet. It is structure is JSON-like (it is "cascading", with a bracketed properties assigned to lvals). It is used to fine tune the page rendering of HTML. It applies to all rendered elements and their content (but not to the rules of generating that content. For example, you can change the positioning of a <span class="tag">p</span> tag, and you cn adjust the font values like the font used or siz of the content in the paragraph, but you cannot change the rendering of the letters in the font.</p>
+			</section>
+            
+          	<section id="CSSBasics">
+				<h2>Some Basic CSS</h2>
+                
+                <h3>Usage</h3>
+                <p>CSS can be used in three ways: inline (within an attribute of any element), internally (within a global element), or externally (linked to internally in the header, but housed in its own file). Here are sample code for each:</p>
+                <ul>
+                    <li>inline — <code>&lt;a class="importantLinks" href="#somelink" style="font-weight: bold"&gt;this text should stand out, so it is in bold&lt;/a&gt;</code></li>
+                    <li>internal — by custom, these tend to be in the <span class="tag">head</span> section of the page. this has the advantage of loading the stylings before the content.
+                        <pre class="highlighted"><code>&lt;style&gt;
+    a.importantLinks {
+        font-weight:bold;
+    }
+&lt;/style&gt;</code></pre></li>
+                    <li>external - by custom, these tend to be in the <span class="tag">head</span> section of the page. <code>&lt;link  href="../css/coursewareNotes.css" rel="stylesheet" /&gt;</code> With a link to a document containing CSS like in the "internal" example.</li>
+                </ul>
+
+                <h3>Specification</h3>
+                <p>CSS uses selectors to specify criteria to apply a set of rules to:</p>
+                <pre class="highlighted">
+SELECTOR[, SELECTOR ...] { 
+    STYLE_PROPERTY: VALUE; 
+   [STYLE_PROPERTY: VALUE; ...]
+}</pre>
+                
+                <h3>Attributes</h3>
+                <p>The <span class="attribute">id</span> and <span class="attribute">class</span> attributes are used in the html document to make it easy in to arbitrarily specify elements or groups of elements in the page and use those to style the page with CSS. The intent is that the <span class="attribute">id</span> tag should be <i>unique</i>, while the <span class="attribute">class</span> tag should define groups of elements (and so should be identical). They both accept more than one value (though only one should be used for the unique attribute), which is separated with a space.</p>
+                
+                <h3>Elements</h3>
+                <p>Just as there are attributes very useful for styles, the <span class="tag">div</span> and <span class="tag">span</span> elements are used to define block and inline elements respectively. They don't carry any particular rendering intent (like a <span class="tag">table</span>), and so are mainly used to divide up the content for styling — or for use with javascript. Of course, these are not necessary, CSS style rules apply to any element and its (accessible aspects of its) contents.</p>
+                <p>In HTML5, <span class="tag">article</span> and <span class="tag">class</span> tags are common, more specific replacements for the plain <span class="tag">div</span> tag.</p>
+			</section>
+		</article>
+	</body>
+</html>

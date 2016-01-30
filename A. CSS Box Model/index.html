@@ -1,0 +1,90 @@
+<!DOCTYPE html />
+<html>
+	<head>
+		<link  href="../css/coursewareNotes.html.css" rel="stylesheet" />
+		<link  href="../css/coursewareNotes.css" rel="stylesheet" />
+	</head>
+	<body>
+		<article>
+			<h1>CSS Box Model</h1>
+			
+			<section id="Borders">
+                <img class="center" src="tutorialimage2.gif" style="float:right; margin-left: 3em;" />
+				<h2>Borders</h2>
+                <p>The <span class="attribute">border</span> property defines a line wrapping <i>around</i> an element.</p>
+                <p>An element with <span class="code">width:200px and border: 1px</span> will be 201px wide: the border counts towards the interior space of the element it is applied to (unlike margin).</p> 
+                <p style="clear:both">Note that in the following example the partially transparent border is red (belonging to the child element, instead of grey:</p>
+
+                <div id="parent" style="background-color:grey; padding: 2em;">
+                    <div>
+                        <h4>border: rgba(0,255,0,0.3) solid 10px;</h4>
+                        <div id="child" style="background-color:red; border: rgba(0,255,0,0.3) solid 10px; width: 10em; height: 10em;"></div>
+                    </div>
+                </div>
+
+                <p>Borders can be defined with different colors or different line forms (solid, dashed, dotted, etc). The most likely choice of line form is <span class="code">solid</span>. These can be specified separately, as <span class="code">border-width</span>, <span class="code">border-style</span>, and <span class="code">border-color</span>. The color will inherit the text color of the element by default. A <span class="code">border-radius</span> can also be specified, to round the edges of the element (border).</p>
+                <p>Each <i>side</i> of a border can be specified separately as <span class="code">border-left</span>, <span class="code">border-top</span>, etc. And the previous can be combined, as in <span class="code">border-left-color</span>.</p>
+			</section>
+            <section id="background">
+                <h2>background property</h2>
+                <p>Elements may have a <span class="attribute">background</span> property, even if they are inline elements. The background can be specified as an image or as a color.</p>
+                <div class="exampleWrapper">
+                    <div style="background: green">background: green</div>
+                    <div style="background-color: red;">background-color: red;</div>
+                    <div style="background: url(simcity\ large.png);">background: url(simcity\&nbsp;large.png);</div>
+                </div><style>
+#background .exampleWrapper > div {
+    width:9em; 
+    height: 9em; 
+    padding: 1em;
+    margin: 1em 0em 1em 3em;
+    float:left;
+}
+                </style>
+                <p style="clear:both">there is a lot of complexity in how the image can be positioned and scaled behind the image. It would be good to look up the details.</p>
+            </section>
+            <section id="Floats">
+                <h2>Float and Clear</h2>
+                <p>The css property <span class="attribute">float</span> can lift an element from its normal vertical positioning in the text, allowing text to wrap around the object. Normally, inline text flow would break at the object, leading ot a serial display:</p>
+                <div style="background-color:grey; padding: 1em; width: 25em;"><p>This is some text. Following is an element in the flow of text: <div class="highlighted" style="margin: 1em"></div> and after it, some more text</p></div>
+                <p>The float attribute can be used to offset the image to the right or left of the flow of text:
+                <div style="background-color:grey; padding: 1em; width: 25em;"><p>This is some text. Following is an element in the flow of text: <div class="highlighted code" style="margin: 1em; float:left">float:left</div> and after it, some more text</p></div>
+                <p>To cause the text to break at the object being floated, and return to a normal flow, it must be given the <span class="attribute">clear</span>property:</p>
+<br />                
+            <div class="outerWrapper">
+                <div class="exampleWrapper" style="background: grey; padding: 3em; max-width: 40em">
+                    <p>this is text before either</p>
+                    <div style="float:left;">float: left</div>
+                    <p>this is text between the two</p>
+                    <div style="float:right;">float: right</div>
+                    <p>this is text after the two</p>
+                    <p style="clear:left">This text has <span class="code">clear:left</span>. It has not cleared the <span class="code">float: right</span>, as you can probably tell.</p>
+                    <p style="clear:right">This text has <span class="code">clear:right</span></p>
+                    <p>To clear both at once you can use  <span class="code">clear:both</span></p>
+                </div>
+                <h4>source for the above</h4>
+                <div class="exampleSource highlighted code">&lt;div class=&quot;exampleWrapper&quot; style=&quot;background: grey; padding: 3em; max-width: 40em&quot;&gt;<br />
+&lt;p&gt;this is text before either&lt;/p&gt;<br />
+&lt;div style=&quot;float:left;&quot;&gt;float: left&lt;/div&gt;<br />
+&lt;p&gt;this is text between the two&lt;/p&gt;<br />
+&lt;div style=&quot;float:right;&quot;&gt;float: right&lt;/div&gt;<br />
+&lt;p&gt;this is text after the two&lt;/p&gt;<br />
+&lt;p style=&quot;clear:left&quot;&gt;This text has &lt;span class=&quot;code&quot;&gt;clear:left&lt;/span&gt;. It has not cleared the &lt;span class=&quot;code&quot;&gt;float: right&lt;/span&gt;, as you can probably tell.&lt;/p&gt;<br />
+&lt;p style=&quot;clear:right&quot;&gt;This text has &lt;span class=&quot;code&quot;&gt;clear:right&lt;/span&gt;&lt;/p&gt;<br />
+&lt;p&gt;To clear both at once you can use  &lt;span class=&quot;code&quot;&gt;clear:both&lt;/span&gt;&lt;/p&gt;<br />
+&lt;/div&gt;
+                </div>
+            </div><style>
+#Floats .exampleWrapper > div {
+    background: #222; 
+    color: #ccc;
+    border: #eee solid 1em;
+    padding: 3em;
+    margin: 1.5em;
+}
+                </style>
+
+            </section>
+		</article>
+	</body>
+</html>

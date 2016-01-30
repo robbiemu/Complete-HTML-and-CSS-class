@@ -1,0 +1,47 @@
+body { font-family: "graublau web", "roboto slab", serif; }
+h1 { font-size: 3.5em; }
+h2 { font-size: 2em; }
+
+article { 
+	margin: 2em;
+	padding:8em 2em 16em 2em;
+	background-color: #ddd;
+	border-radius: 0.5%;
+}
+
+section {
+	margin: 1em;
+	padding: 1.5em;
+	background-color: #eee; 
+	border-radius: 0.4em;
+}
+
+section#addendum {
+    background-color: #fd9;
+}
+
+.highlighted {
+	margin: 0.3em;
+	padding: 0.4em;
+	background-color: white;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.note {
+    font-size: 0.9em;
+    font-style: italic;
+}
+.note::before {
+    content: "*note: ";
+}
+
+.inset {
+    display: inline-block;
+    margin-left: 5vw;
+    margin-right: 3vw;
+}

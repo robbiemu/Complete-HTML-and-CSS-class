@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+	<head>
+		<style type="text/css">
+article {
+	margin: 2em;
+	padding: 2em;
+	background-color: #ddd;
+	border-radius: 0.3em;
+}
+article > p {
+	font-family: "Roboto Slab", serif;
+}
+article > h1 {
+	margin-left: 10em;
+	font-family: "Graublau web";
+	font-weight: 900;
+}
+
+.tag {
+	background-color: white;
+}
+.tag::before {
+	content: "<";
+}
+.tag:not(.singleElement)::after {
+	content: ">";
+}
+.tag.singleElement::after {
+	content: " />";
+}
+
+pre {
+	background-color: #eee;
+	display: inline-block;
+	padding: 1em;
+	margin-bottom: 1em;
+	border-radius: 0.5em;
+}
+		</style>
+	</head>
+	<body>
+		<article>
+		<h1>whitespace</h1>
+		<p>Text with extra spaces in it will only render    1    space. You can see that in the
+		code for this page right
+		here.</p>
+		<p>The <span class="tag" title="pre-formatted">pre</span> tag can be </p><pre>
+		used
+		to insert extra    white    space</pre><p> if it is desired. It adds the text literally, without formatting it, and it is a block element — it automatically will terminate a paragraph element.</p>
+		<p>If you look at the source for this html page, you will see that text in <span class="tag" title="paragraph">p</span> tags should render in a serif font. This did not get applied at the <span class="tag" title="pre-formatted">pre</span> tag. So another way to add white space, is to use the non-breaking space <i>&amp;nbsp&semi;</i> in your text, or to use the <span class="tag singleElement" title="line break">br</span> tag.</p>
+		</article>
+	</body>
+</html>

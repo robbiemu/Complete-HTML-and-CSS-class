@@ -11,3 +11,4 @@ and a write of the what the course covered.
 I'll be adding those sorts of details here in the near future.
 
 ## _a form of certification of completing a free or cert-less online class_
+Please see the [wiki](https://github.com/robbiemu/Complete-HTML-and-CSS-class/wiki) for details.
